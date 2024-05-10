@@ -7,6 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1kqQbfoEPbgGJQMHgHqdIOwkRTl_RwGbd
 """
 
+pip install -q -U google-generativeai
+
 import google.generativeai as genai
 from google.colab import files
 from PIL import Image
