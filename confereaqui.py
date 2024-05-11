@@ -15,8 +15,7 @@ system_instruction = "Você é um modelo de linguagem projetado para detectar de
 
 # Configuração do SDK com as configurações de segurança
 GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
-genai.configure(api_key=GOOGLE_API_KEY)
-
+genai.configure(api_key=os.getenv("gemini_api_key"))
 safety_settings = {
         "HARASSMENT" : "BLOCK_NONE",
     
