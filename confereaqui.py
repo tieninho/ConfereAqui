@@ -108,7 +108,8 @@ if st.session_state.historico_respostas:
         st.markdown("---")  # Linha divisória entre as respostas
 
 # Adicionando um rodapé com o link do LinkedIn
-with col2:
+col4, col5, col6 = st.columns([3, 2, 3])  # Colunas para espaçamento
+with col5:
     st.markdown(
   """
     [Meu LinkedIn](https://www.linkedin.com/in/etiene-alves/)
