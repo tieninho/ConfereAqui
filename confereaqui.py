@@ -91,5 +91,9 @@ if st.session_state.historico_respostas:
 
     # Iterar sobre a lista e exibir as mensagens em pares
     for role, message in messages:
-        with st.beta_expander(role):
-            st.markdown(message)
+        if role == "Usuário":
+            with st.beta_expander("Usuário"):
+                st.markdown(message)
+        else:
+            with st.beta_expander("Assistente"):
+                st.markdown(message)
