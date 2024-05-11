@@ -1,7 +1,6 @@
 import streamlit as st
 st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 from pathlib import Path
-from google.generativeai import genai
 import google.generativeai as genai
 from dotenv import load_dotenv
 import pandas as pd
