@@ -21,7 +21,7 @@ safety_settings = {
 st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 
 # Fazendo o display do título da página
-st.image('LogoConfereAqui.png', width=500)
+st.image('LogoConfereAqui.png', width=400)
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
