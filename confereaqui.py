@@ -22,6 +22,13 @@ st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 # Fazendo o display do título da página
 st.title('Confere Aqui 🔍')
 
+# Texto de introdução e instrução de utilização
+st.markdown("""
+    Bem-vindo ao Confere Aqui! Este é um sistema projetado para verificar a veracidade de notícias. 
+    Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
+    Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
+""")
+
 # Inicializando o modelo
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 model = genai.GenerativeModel(
@@ -36,14 +43,9 @@ if "historico_respostas" not in st.session_state:
 if "resposta_counter" not in st.session_state:
     st.session_state.resposta_counter = 0
 
-# Widget para upload de imagens/vídeos
-upload_button = st.file_uploader("Faça upload de uma imagem/vídeo" )
-text_input = st.text_area("Insira o texto da sua notícia aqui")
-
-# Botão para limpar campos e gerar nova resposta
-if st.button("Gerar Nova Resposta"):
-    upload_button.clear()
-    text_input.empty()
+# Widget para upload de imagens
+upload_button = st.file_uploader("Faça upload de uma imagem" )
+text_input = st.text_area("Ou insira o texto da sua notícia aqui")
 
 # Mensagem de "Gerando resposta..."
 gerando_resposta_msg = st.empty()
