@@ -18,16 +18,15 @@ safety_settings = {
         "DANGEROUS" : "BLOCK_NONE",
     }
 
+# Configurando a página
+st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
+
 # Inicializando o modelo
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 model = genai.GenerativeModel(
     model_name="gemini-1.5-pro-latest",
     system_instruction=system_instruction
 )
-
-# Título da página
-st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
-st.title('ConfereAqui🔍')
 
 # Inicialização do estado
 if "historico_respostas" not in st.session_state:
