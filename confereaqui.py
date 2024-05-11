@@ -36,7 +36,7 @@ if "historico_respostas" not in st.session_state:
 if "resposta_counter" not in st.session_state:
     st.session_state.resposta_counter = 0
 
-# Widgets para upload de imagens e inserção de texto
+# Widget para upload de imagens/vídeos
 upload_button = st.file_uploader("Faça upload de uma imagem/vídeo", width=300)
 text_input = st.text_area("Insira o texto da sua notícia aqui", width=300)
 
@@ -83,3 +83,4 @@ if st.session_state.historico_respostas:
     st.subheader("Histórico de Respostas")
     for resposta in st.session_state.historico_respostas:
         st.write(resposta)
+
