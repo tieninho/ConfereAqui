@@ -77,13 +77,10 @@ if st.button("Verificar Notícia"):
         # Adicionar a resposta ao histórico
         st.session_state.historico_respostas.append(resposta_texto)
 
+        # Limpar o texto inserido no campo de texto
+        text_input.empty()
+
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
 
-# Exibir histórico de respostas
-if st.session_state.historico_respostas:
-    st.subheader("Resposta:")
-    for resposta in st.session_state.historico_respostas:
-        st.write(resposta)
-        st.markdown("---")  # Linha divisória entre as respostas
 
