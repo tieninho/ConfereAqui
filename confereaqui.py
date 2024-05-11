@@ -83,11 +83,14 @@ if st.button("Verificar Notícia"):
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
             
-# Exibir histórico de respostas
+# Exibir histórico de respostas em formato de chat
 if st.session_state.historico_respostas:
-    st.subheader("Respostas:")
+    st.subheader("Histórico de Respostas")
     for resposta in st.session_state.historico_respostas:
-        st.write(resposta)
-        st.markdown("---")  # Linha divisória entre as respostas
+        with st.beta_expander():
+            st.write("Usuário:")
+            st.write(content)  # Exibe a pergunta/mídia do usuário
+            st.write("Robô:")
+            st.write(resposta)  # Exibe a resposta do robô
 
 
