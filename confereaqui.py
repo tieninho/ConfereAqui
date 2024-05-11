@@ -1,15 +1,16 @@
 import streamlit as st
 import google.generativeai as genai
 from PIL import Image
+from dotenv import load_dotenv
 import io
 import os
+load_dotenv()
 
 # Instrução do sistema
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 
 # Configuração do SDK com as configurações de segurança
-GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY")
 safety_settings = {
         "HARASSMENT" : "BLOCK_NONE",
         "HATE" : "BLOCK_NONE",
