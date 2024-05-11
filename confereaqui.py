@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 import google.generativeai as genai
 import os
 from PIL import Image
