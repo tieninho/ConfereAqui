@@ -27,18 +27,15 @@ st.title('Confere Aqui 🔍')
 st.markdown("""
     🔍 **Bem-vindo ao Confere Aqui!**
 
-    Este é o seu detector de desinformação, pronto para ajudá-lo a navegar pelo mar de notícias com confiança. 
-     \n O objetivo é garantir que você possa identificar conteúdos duvidosos e tomar decisões informadas.
+    Este é o seu detector de desinformação, pronto para ajudá-lo a navegar pelo mar de notícias com confiança. O objetivo é garantir que você possa identificar conteúdos duvidosos e tomar decisões informadas.
 
     ℹ️ **Como funciona?**
 
-    Você pode nos fornecer um texto de notícia ou até mesmo fazer o upload de uma imagem relacionada. 
-    \n Nosso sistema analisará o conteúdo, atribuindo uma pontuação de desinformação de 0 a 1. Quanto mais próximo de 1, maior a probabilidade de ser desinformação.
+    Você pode nos fornecer um texto de notícia ou até mesmo fazer o upload de uma imagem relacionada. Nosso sistema analisará o conteúdo, atribuindo uma pontuação de desinformação de 0 a 1. Quanto mais próximo de 1, maior a probabilidade de ser desinformação.
 
     ⚠️ **Importante:**
 
-    Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. 
-     \n Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
+    Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
 
