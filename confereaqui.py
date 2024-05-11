@@ -20,8 +20,10 @@ safety_settings = {
 # Configurando a página
 st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 
-# Fazendo o display do título da página
-st.image('LogoConfereAqui.png', width=300, align='center')
+# Centralizando a imagem usando markdown e espaço
+col1, col2, col3 = st.columns([1, 2, 1])  # Colunas para espaçamento
+with col2:
+    st.image('LogoConfereAqui.png', width=300)
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
