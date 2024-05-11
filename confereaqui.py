@@ -88,11 +88,12 @@ if st.session_state.historico_respostas:
     for i, resposta in enumerate(st.session_state.historico_respostas):
         if i % 2 == 0:
             # Exibe a mensagem enviada pelo usuário
-            with st.beta_container():
-                st.markdown(f"**Usuário:** {user_query}")
+            with st.beta_expander("Usuário"):
+                st.markdown(user_query)
         else:
             # Exibe a resposta do assistente
-            with st.beta_container():
-                st.markdown(f"**Assistente:** {resposta}")
+            with st.beta_expander("Assistente"):
+                st.markdown(resposta)
+
 
 
