@@ -87,10 +87,9 @@ if st.button("Verificar Notícia"):
 if st.session_state.historico_respostas:
     st.subheader("Histórico de Respostas")
     for resposta in st.session_state.historico_respostas:
-        with st.beta_expander():
+        with st.beta_container():
             st.write("Usuário:")
             st.write(content)  # Exibe a pergunta/mídia do usuário
             st.write("Robô:")
-            st.write(resposta)  # Exibe a resposta do robô
-
+            st.write(resposta)  # Exibe a resposta do robo
 
