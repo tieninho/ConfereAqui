@@ -85,15 +85,20 @@ if st.button("Verificar Notícia"):
             
 # Exibir histórico de respostas em formato de chat
 if st.session_state.historico_respostas:
+    # Lista para armazenar todas as mensagens de usuário e assistente
+    messages = []
+
+    # Preencher a lista com as mensagens
     for i, resposta in enumerate(st.session_state.historico_respostas):
         if i % 2 == 0:
-            # Exibe a mensagem enviada pelo usuário
-            with st.beta_expander("Usuário"):
-                st.markdown(user_query)
+            messages.append(("Usuário", user_query))
         else:
-            # Exibe a resposta do assistente
-            with st.beta_expander("Assistente"):
-                st.markdown(resposta)
+            messages.append(("Assistente", resposta))
+
+    # Iterar sobre a lista e exibir as mensagens em pares
+    for role, message in messages:
+        with st.beta_expander(role):
+            st.markdown(message)
 
 
 
