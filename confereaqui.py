@@ -39,7 +39,7 @@ st.markdown("""
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
 
-        Teste agora! 
+     Teste agora! 
 """)
 
 
