@@ -24,12 +24,7 @@ st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 col1, col2, col3 = st.columns([3, 2, 3])  # Colunas para espaçamento
 with col2:
     st.image('LogoConfereAqui.png', width=300)
-    st.markdown(
-  """
-    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
-    """
-)
-
+ 
 # Texto de introdução e instrução de utilização
 st.markdown("""
     🔍 **Bem-vindo ao Confere Aqui!**
@@ -45,6 +40,8 @@ st.markdown("""
     Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
+
+    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
 
 """)
 
