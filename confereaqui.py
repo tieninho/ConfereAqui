@@ -88,6 +88,9 @@ if st.button("Verificar Notícia"):
 
         # Resolver a resposta
         response.resolve()
+        
+        # Imprimir o texto gerado pelo modelo com a classificação da resposta
+        resposta_texto = f"**Resposta {st.session_state.resposta_counter}:** {response.text}"
 
         # Adicionar a resposta ao histórico
         st.session_state.historico_respostas.append(resposta_texto)
