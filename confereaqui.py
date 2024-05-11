@@ -99,7 +99,7 @@ if st.button("Verificar Notícia"):
 
 # Exibir histórico de respostas
 if st.session_state.historico_respostas:
-    st.subheader("Conferi aqui 🔍")
+    st.subheader("Verificado 🔍")
     # Iterar sobre o histórico de respostas de trás para frente
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
@@ -108,4 +108,4 @@ if st.session_state.historico_respostas:
 # Botão para limpar o upload da imagem e o texto inserido
 if st.button("Limpar"):
     upload_button = None
-    text_input.value = ""
+    text_input = ""
