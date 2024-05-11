@@ -85,12 +85,12 @@ if st.button("Verificar Notícia"):
             
 # Exibir histórico de respostas em formato de chat
 if st.session_state.historico_respostas:
-    st.subheader("Histórico de Respostas")
-    for resposta in st.session_state.historico_respostas:
-        st.write("Usuário:")
-        st.write(content)  # Exibe a pergunta/mídia do usuário
-        st.write("Robô:")
-        st.write(resposta)  # Exibe a resposta do robô
-        st.write("")  # Adiciona uma linha em branco para separar as mensagens
+    for i, resposta in enumerate(st.session_state.historico_respostas):
+        if i % 2 == 0:
+            with st.chat_message("user"):
+                st.markdown(content)  # Exibe a pergunta/mídia do usuário
+        else:
+            with st.chat_message("assistant"):
+                st.markdown(resposta)  # Exibe a resposta do robô
 
 
