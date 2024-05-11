@@ -99,7 +99,7 @@ if st.button("Verificar Notícia"):
 
 # Exibir histórico de respostas
 if st.session_state.historico_respostas:
-    st.subheader("Verificado 🔍")
+    st.subheader("Resultado 🔍")
     # Iterar sobre o histórico de respostas de trás para frente
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
