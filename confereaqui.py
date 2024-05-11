@@ -20,7 +20,7 @@ safety_settings = {
 st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 
 # Fazendo o display do título da página
-st.title('EmpregoConnect🕵️')
+st.title('Confere Aqui 🔍')
 
 # Inicializando o modelo
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
