@@ -100,6 +100,13 @@ if st.button("Verificar Notícia"):
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
 
+# Exibir histórico de respostas
+if st.session_state.historico_respostas:
+    st.subheader("Conferi aqui 🔍")
+    for resposta in st.session_state.historico_respostas:
+        st.write(resposta)
+        st.markdown("---")  # Linha divisória entre as respostas
+
 # Botão para limpar o upload da imagem e o texto inserido
 if st.button("Limpar"):
     upload_button = None
