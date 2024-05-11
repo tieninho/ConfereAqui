@@ -25,10 +25,21 @@ st.title('Confere Aqui 🔍')
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
-    Bem-vindo ao Confere Aqui!\n Sou projetado para verificar a veracidade de notícias.\n 
-    \n Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
-    \n Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
+    🔍 **Bem-vindo ao Confere Aqui!**
+
+    Este é o seu detector de desinformação, pronto para ajudá-lo a navegar pelo mar de notícias com confiança. Nosso objetivo é garantir que você possa identificar conteúdos duvidosos e tomar decisões informadas.
+
+    ℹ️ **Como funciona?**
+
+    Você pode nos fornecer um texto de notícia ou até mesmo fazer o upload de uma imagem relacionada. Nosso sistema analisará o conteúdo, atribuindo uma pontuação de desinformação de 0 a 1. Quanto mais próximo de 1, maior a probabilidade de ser desinformação.
+
+    ⚠️ **Importante:**
+
+    Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
+
+    ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
 """)
+
 
 # Inicializando o modelo
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
