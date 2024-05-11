@@ -24,6 +24,11 @@ st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
 col1, col2, col3 = st.columns([3, 2, 3])  # Colunas para espaçamento
 with col2:
     st.image('LogoConfereAqui.png', width=300)
+    st.markdown(
+  """
+    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
+    """
+)
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
@@ -106,14 +111,3 @@ if st.session_state.historico_respostas:
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
         st.markdown("---")  # Linha divisória entre as respostas
-
-st.empty()
-
-# Adicionando um rodapé com o link do LinkedIn
-col4, col5, col6 = st.columns([4, 2, 3])  # Colunas para espaçamento
-with col5:
-    st.markdown(
-  """
-    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
-    """
-)
