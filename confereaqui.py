@@ -83,10 +83,6 @@ if st.button("Verificar Notícia"):
         # Adicionar a resposta ao histórico
         st.session_state.historico_respostas.append(resposta_texto)
 
-        # Limpar o campo de texto
-        upload_button = None
-        text_input = ""  # Define o campo de texto como vazio
-
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
 
