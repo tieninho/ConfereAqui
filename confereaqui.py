@@ -77,10 +77,11 @@ if st.button("Verificar Notícia"):
         # Adicionar a resposta ao histórico
         st.session_state.historico_respostas.append(resposta_texto)
 
-        # Limpar o texto inserido no campo de texto
-        text_input.empty()
+        # Limpar o campo de texto
+        text_input = ""  # Define o campo de texto como vazio
 
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
+
 
 
