@@ -60,7 +60,7 @@ if "resposta_counter" not in st.session_state:
 
 # Widget para upload de imagens
 upload_button = st.file_uploader("Faça upload de uma imagem" )
-text_input = st.text_area("Ou insira o texto da sua notícia aqui", key="texto")
+text_input = st.text_area("Ou insira o texto da sua notícia aqui")
 
 # Mensagem de "Gerando resposta..."
 gerando_resposta_msg = st.empty()
@@ -104,7 +104,3 @@ if st.session_state.historico_respostas:
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
         st.markdown("---")  # Linha divisória entre as respostas
-
-# Botão para limpar o upload da imagem e o texto inserido
-if st.button("Limpar"):
-    st.session_state.texto = ""
