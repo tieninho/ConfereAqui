@@ -24,9 +24,9 @@ st.title('Confere Aqui 🔍')
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
-    Bem-vindo ao Confere Aqui! Este é um sistema projetado para verificar a veracidade de notícias. 
-    Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
-    Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
+    Bem-vindo ao Confere Aqui!\n Sou projetado para verificar a veracidade de notícias.\n 
+    \n Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
+    \n Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
 """)
 
 # Inicializando o modelo
