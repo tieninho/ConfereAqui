@@ -106,3 +106,11 @@ if st.session_state.historico_respostas:
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
         st.markdown("---")  # Linha divisória entre as respostas
+
+# Adicionando um rodapé com o link do LinkedIn
+st.markdown(
+    """
+    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
+    """
+)
+
