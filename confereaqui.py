@@ -85,7 +85,7 @@ if st.button("Verificar Notícia"):
             
 # Exibir histórico de respostas
 if st.session_state.historico_respostas:
-    st.subheader("Resposta:")
+    st.subheader("Respostas:")
     for resposta in st.session_state.historico_respostas:
         st.write(resposta)
         st.markdown("---")  # Linha divisória entre as respostas
