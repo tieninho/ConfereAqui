@@ -87,10 +87,15 @@ if st.button("Verificar Notícia"):
 if st.session_state.historico_respostas:
     for i, resposta in enumerate(st.session_state.historico_respostas):
         if i % 2 == 0:
-            with st.chat_message("user"):
-                st.markdown(content)  # Exibe a pergunta/mídia do usuário
+            # Exibe a pergunta/mídia do usuário
+            if upload_button is not None:
+                st.image(upload_button, caption="Imagem enviada pelo usuário")
+            elif text_input:
+                st.markdown(f"**Usuário:** {text_input}")
         else:
+            # Exibe a resposta do robô
             with st.chat_message("assistant"):
-                st.markdown(resposta)  # Exibe a resposta do robô
+                st.markdown(resposta)
+
 
 
