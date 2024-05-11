@@ -110,7 +110,9 @@ if st.session_state.historico_respostas:
 # Adicionando um rodapé com o link do LinkedIn
 st.markdown(
     """
-    [Vamos nos conectar no LinkedIn?](https://www.linkedin.com/in/etiene-alves/)
-    """
+    <div style='text-align: center; padding-top: 30px;'>
+    <a href="www.linkedin.com/in/etiene-alves" target="_blank">LinkedIn</a>
+    </div>
+    """,
+    unsafe_allow_html=True
 )
-
