@@ -4,6 +4,7 @@ from PIL import Image
 import io
 import os
 
+# Instrução do sistema
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 
 # Configuração do SDK com as configurações de segurança
@@ -82,7 +83,12 @@ if st.button("Verificar Notícia"):
 
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
-            
+
+# Botão para limpar o upload da imagem e o texto inserido
+if st.button("Limpar"):
+    upload_button = None
+    text_input = ""
+
 # Exibir histórico de respostas
 if st.session_state.historico_respostas:
     st.subheader("Respostas:")
