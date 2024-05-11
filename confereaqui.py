@@ -91,5 +91,7 @@ if st.session_state.historico_respostas:
         partes = resposta.split(":")
         role = partes[0]
         message = partes[1]
-        with st.beta_container():
-            st.write(f"{role}: {message}")
+        if role == "Usuário":
+            st.write(f"**{role}:** {message}")
+        else:
+            st.write(f"**Assistente:** {message}")
