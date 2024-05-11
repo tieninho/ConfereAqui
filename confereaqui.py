@@ -87,15 +87,12 @@ if st.button("Verificar Notícia"):
 if st.session_state.historico_respostas:
     for i, resposta in enumerate(st.session_state.historico_respostas):
         if i % 2 == 0:
-            # Exibe a pergunta/mídia do usuário
-            if upload_button is not None:
-                st.image(upload_button, caption="Imagem enviada pelo usuário")
-            elif text_input:
-                st.markdown(f"**Usuário:** {text_input}")
+            # Exibe a mensagem enviada pelo usuário
+            with st.beta_container():
+                st.markdown(f"**Usuário:** {user_query}")
         else:
-            # Exibe a resposta do robô
-            with st.chat_message("assistant"):
-                st.markdown(resposta)
-
+            # Exibe a resposta do assistente
+            with st.beta_container():
+                st.markdown(f"**Assistente:** {resposta}")
 
 
