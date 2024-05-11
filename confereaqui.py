@@ -4,17 +4,12 @@ from PIL import Image
 import io
 import os
 
+# Instrução do sistema
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 
 # Configuração do SDK com as configurações de segurança
 GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
 genai.configure(api_key=GOOGLE_API_KEY)
-safety_settings = {
-        "HARASSMENT" : "BLOCK_NONE",
-        "HATE" : "BLOCK_NONE",
-        "SEXUAL" : "BLOCK_NONE",
-        "DANGEROUS" : "BLOCK_NONE",
-    }
 
 # Configurando a página
 st.set_page_config(page_title='ConfereAqui', page_icon='🔍', layout='wide')
@@ -24,13 +19,12 @@ st.title('Confere Aqui 🔍')
 
 # Texto de introdução e instrução de utilização
 st.markdown("""
-    Bem-vindo ao Confere Aqui!\n Sou projetado para verificar a veracidade de notícias.\n 
-    \n Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
-    \n Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
+    Bem-vindo ao Confere Aqui! Este é um sistema projetado para verificar a veracidade de notícias. 
+    Você pode fazer upload de uma imagem ou inserir o texto de uma notícia para verificar se há desinformação.
+    Após fazer o upload ou inserir o texto, clique no botão "Verificar Notícia" para obter uma análise.
 """)
 
 # Inicializando o modelo
-system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 model = genai.GenerativeModel(
     model_name="gemini-1.5-pro-latest",
     system_instruction=system_instruction
@@ -66,7 +60,7 @@ if st.button("Verificar Notícia"):
         st.session_state.resposta_counter += 1
         # Gerar o conteúdo com o modelo de visão do Gemini
         model_vision = genai.GenerativeModel('gemini-1.5-pro-latest')
-        response = model_vision.generate_content(["Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio.", content], stream=True)
+        response = model_vision.generate_content([system_instruction, content], stream=True)
 
         # Resolver a resposta
         response.resolve()
@@ -83,9 +77,19 @@ if st.button("Verificar Notícia"):
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
             
-# Exibir histórico de respostas
+# Exibir histórico de respostas em formato de chat
 if st.session_state.historico_respostas:
-    st.subheader("Respostas:")
-    for resposta in st.session_state.historico_respostas:
-        st.write(resposta)
-        st.markdown("---")  # Linha divisória entre as respostas
+    # Lista para armazenar todas as mensagens de usuário e assistente
+    messages = []
+
+    # Preencher a lista com as mensagens
+    for i, resposta in enumerate(st.session_state.historico_respostas):
+        if i % 2 == 0:
+            messages.append(("Usuário", resposta))
+        else:
+            messages.append(("Assistente", resposta))
+
+    # Iterar sobre a lista e exibir as mensagens em pares
+    for role, message in messages:
+        with st.beta_expander(role):
+            st.markdown(message)
