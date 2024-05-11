@@ -1,5 +1,5 @@
 import streamlit as st
-from google.generativeai import GenAI
+from google.generativeai import genai
 from PIL import Image
 import io
 import os
@@ -9,7 +9,7 @@ st.title("Verificador de Notícias")
 
 # Configuração do SDK com as configurações de segurança
 GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
-genai = GenAI(api_key=GOOGLE_API_KEY)
+genai = genai(api_key=GOOGLE_API_KEY)
 
 # Lista para armazenar o histórico de respostas
 if "historico_respostas" not in st.session_state.keys():
