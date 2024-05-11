@@ -38,6 +38,8 @@ st.markdown("""
     Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
+
+        Teste agora! 
 """)
 
 
