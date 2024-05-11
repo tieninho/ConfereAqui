@@ -82,7 +82,7 @@ if st.button("Verificar Notícia"):
 
 # Exibir histórico de respostas
 if st.session_state.historico_respostas:
-    st.subheader("Resposta")
+    st.subheader("Resposta:")
     for resposta in st.session_state.historico_respostas:
         st.write(resposta)
 
