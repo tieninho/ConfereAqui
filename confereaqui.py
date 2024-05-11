@@ -108,11 +108,9 @@ if st.session_state.historico_respostas:
         st.markdown("---")  # Linha divisória entre as respostas
 
 # Adicionando um rodapé com o link do LinkedIn
-st.markdown(
+with col2:
+    st.markdown(
+  """
+    [Meu LinkedIn](https://www.linkedin.com/in/etiene-alves/)
     """
-    <div style='text-align: center; padding-top: 30px;'>
-    <a href="www.linkedin.com/in/etiene-alves" target="_blank">LinkedIn</a>
-    </div>
-    """,
-    unsafe_allow_html=True
 )
