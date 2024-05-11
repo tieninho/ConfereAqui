@@ -37,8 +37,13 @@ if "resposta_counter" not in st.session_state:
     st.session_state.resposta_counter = 0
 
 # Widgets para upload de imagens e inserção de texto
-upload_button = st.file_uploader("Faça upload de uma imagem/vídeo")
-text_input = st.text_area("Insira o texto da sua notícia aqui")
+upload_button = st.file_uploader("Faça upload de uma imagem/vídeo", width=300)
+text_input = st.text_area("Insira o texto da sua notícia aqui", width=300)
+
+# Botão para limpar campos e gerar nova resposta
+if st.button("Gerar Nova Resposta"):
+    upload_button.clear()
+    text_input.empty()
 
 # Mensagem de "Gerando resposta..."
 gerando_resposta_msg = st.empty()
