@@ -39,9 +39,10 @@ st.markdown("""
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
 
-     Teste agora! 
 """)
 
+# Título "Teste Agora"
+st.header("Teste Agora")
 
 # Inicializando o modelo
 system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
