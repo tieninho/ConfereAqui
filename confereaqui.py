@@ -104,8 +104,3 @@ if st.session_state.historico_respostas:
     for resposta in reversed(st.session_state.historico_respostas):
         st.write(resposta)
         st.markdown("---")  # Linha divisória entre as respostas
-
-# Botão para limpar o upload da imagem e o texto inserido
-if st.button("Limpar"):
-    upload_button = None
-    text_input = st.text_area("Ou insira o texto da sua notícia aqui", value= "")
