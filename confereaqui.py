@@ -71,7 +71,9 @@ gerando_resposta_msg = st.empty()
 # Função para lidar com o clique no botão "Verificar Notícia"
 if st.button("Verificar Notícia"):
     content = None
-    if upload_button is not None:
+    if upload_button is not None and text_input:
+        st.error("Por favor, selecione apenas um método de entrada: imagem ou texto.")
+    elif upload_button is not None:
         img = Image.open(upload_button)
         content = img
     elif text_input:
@@ -97,13 +99,6 @@ if st.button("Verificar Notícia"):
 
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
-
-# Exibir histórico de respostas
-if st.session_state.historico_respostas:
-    st.subheader("Conferi aqui 🔍")
-    for resposta in st.session_state.historico_respostas:
-        st.write(resposta)
-        st.markdown("---")  # Linha divisória entre as respostas
 
 # Botão para limpar o upload da imagem e o texto inserido
 if st.button("Limpar"):
