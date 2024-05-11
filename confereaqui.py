@@ -11,12 +11,61 @@ from PIL import Image
 import io
 import os
 
-# Configurando o título do aplicativo
-st.title("Verificador de Notícias")
+system_instruction = "Você é um modelo de linguagem projetado para detectar desinformação. Analise o seguinte texto de notícias, forneça uma pontuação de desinformação de 0 a 1, onde 1 é altamente provável de ser desinformação e adicione evidências de apoio."
 
 # Configuração do SDK com as configurações de segurança
 GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
 genai = genai(api_key=GOOGLE_API_KEY)
+
+safety_settings = {
+        "HARASSMENT" : "BLOCK_NONE",
+    
+        "HATE" : "BLOCK_NONE",
+  
+        "SEXUAL" : "BLOCK_NONE",
+    
+        "DANGEROUS" : "BLOCK_NONE",
+    }
+
+# Configurando a api para o modelo
+genai.configure(api_key=GOOGLE_API_KEY("gemini_api_key"))
+# Inicializando o modelo (gemini-1.5-pro-latest)
+model = genai.GenerativeModel(
+  model_name="gemini-1.5-pro-latest",
+  system_instruction=system_instruction
+                              )
+
+initial_model_message = "Olá eu sou Robson um assistente virtual que te ajuda a encontrar a vaga de emprego ideal para você com processo seletivo aberto. Como você se chama?"
+
+# Fazendo o display do título da página
+st.title('EmpregoConnect🕵️')
+
+
+for i, message in enumerate(st.session_state.chat.history):
+  if i == 1:
+     continue
+  if message.role == "user":
+    with st.chat_message("user"):
+      st.markdown(message.parts[0].text)
+  else:
+    with st.chat_message("assistant"):
+      st.markdown(message.parts[0].text)
+
+user_query = st.chat_input('Você pode falar ou digitar sua resposta aqui:') 
+
+chat = model.start_chat()
+
+if user_query is not None and user_query != '':
+    # st.session_state.chat_history.append(("user", user_query))
+    
+    with st.chat_message("user"):
+      st.markdown(user_query)
+    
+    with st.chat_message("assistant"):
+
+      ai_query = st.session_state.chat.send_message( user_query ).text
+
+      st.markdown(ai_query)
 
 # Lista para armazenar o histórico de respostas
 if "historico_respostas" not in st.session_state.keys():
