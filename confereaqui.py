@@ -82,6 +82,12 @@ if st.button("Verificar Notícia"):
 
         # Esconder a mensagem "Gerando resposta..."
         gerando_resposta_msg.empty()
-
+            
+# Exibir histórico de respostas
+if st.session_state.historico_respostas:
+    st.subheader("Resposta:")
+    for resposta in st.session_state.historico_respostas:
+        st.write(resposta)
+        st.markdown("---")  # Linha divisória entre as respostas
 
 
