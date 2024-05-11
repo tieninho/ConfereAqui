@@ -33,7 +33,7 @@ st.markdown("""
     ℹ️ **Como funciona?**
 
     Você pode nos fornecer um texto de notícia ou até mesmo fazer o upload de uma imagem relacionada. 
-    Nosso sistema analisará o conteúdo, atribuindo uma pontuação de desinformação de 0 a 1. Quanto mais próximo de 1, maior a probabilidade de ser desinformação.
+    \n Nosso sistema analisará o conteúdo, atribuindo uma pontuação de desinformação de 0 a 1. Quanto mais próximo de 1, maior a probabilidade de ser desinformação.
 
     ⚠️ **Importante:**
 
