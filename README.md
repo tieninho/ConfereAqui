@@ -10,6 +10,7 @@ Utilizando em sua base o modelo Gemini 1.5 Pro, este detector é capaz de analis
 ![Descrição da imagem 2](ConfereAquiTela1.png)
 ![Descrição da imagem 3](ConfereAquiTela2.png)
 
+
 ### Uso da ferramenta
 ![Descrição do gif 4](ConfereAquiUso.gif)
 
