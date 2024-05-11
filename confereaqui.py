@@ -3,6 +3,7 @@ import google.generativeai as genai
 from PIL import Image
 import io
 import os
+
 # Configuração do SDK com as configurações de segurança
 GOOGLE_API_KEY = "AIzaSyA5oYJp9yMKID2lBqo9gdkIbpX23IIsGhw"
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -90,5 +91,5 @@ if st.session_state.historico_respostas:
         partes = resposta.split(":")
         role = partes[0]
         message = partes[1]
-        with st.beta_expander(role):
-            st.markdown(message)
+        with st.beta_container():
+            st.write(f"{role}: {message}")
