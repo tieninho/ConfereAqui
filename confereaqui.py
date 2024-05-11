@@ -108,4 +108,4 @@ if st.session_state.historico_respostas:
 # Botão para limpar o upload da imagem e o texto inserido
 if st.button("Limpar"):
     upload_button = None
-    text_input = ""
+    text_input = st.text_area("Ou insira o texto da sua notícia aqui", value= "")
