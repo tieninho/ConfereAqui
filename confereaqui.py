@@ -28,7 +28,7 @@ st.markdown("""
     🔍 **Bem-vindo ao Confere Aqui!**
 
     Este é o seu detector de desinformação, pronto para ajudá-lo a navegar pelo mar de notícias com confiança. 
-    O objetivo é garantir que você possa identificar conteúdos duvidosos e tomar decisões informadas.
+     \n O objetivo é garantir que você possa identificar conteúdos duvidosos e tomar decisões informadas.
 
     ℹ️ **Como funciona?**
 
@@ -38,7 +38,7 @@ st.markdown("""
     ⚠️ **Importante:**
 
     Lembre-se de que somos um modelo inicial e nossa análise não substitui a verificação em fontes de notícias confiáveis. 
-    Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
+     \n Sempre verifique as informações em sites de notícias respeitáveis antes de tirar conclusões.
 
     ✅ Com o Confere Aqui, você pode navegar pelas notícias com confiança, sempre pronto para separar os fatos da ficção!
 
