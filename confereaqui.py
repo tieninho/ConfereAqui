@@ -26,8 +26,6 @@ safety_settings = {
         "DANGEROUS" : "BLOCK_NONE",
     }
 
-# Configurando a api para o modelo
-genai.configure(api_key=GOOGLE_API_KEY("gemini_api_key"))
 # Inicializando o modelo (gemini-1.5-pro-latest)
 model = genai.GenerativeModel(
   model_name="gemini-1.5-pro-latest",
