@@ -83,7 +83,7 @@ if st.button("Verificar Notícia"):
 
     if content:
         # Exibir a mensagem "Gerando resposta..."
-        gerando_resposta_msg.text("Gerando resposta...")
+        gerando_resposta_msg.text("Verificando conteúdo...")
 
         st.session_state.resposta_counter += 1
         # Gerar o conteúdo com o modelo de visão do Gemini
